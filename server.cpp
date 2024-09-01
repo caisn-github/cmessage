@@ -28,11 +28,13 @@ int main()
     // accepting connection request
     int clientSocket = accept(serverSocket, nullptr, nullptr);
 
-    // reciving data
+    // receiving data
     char buffer[1024] = { 0 };
     recv(clientSocket, buffer, sizeof(buffer), 0);
     cout << "from client:" << buffer << endl;
-
+    
+    // execute code verify op
+    
     // close the socket    
     close(serverSocket);
     return 0;

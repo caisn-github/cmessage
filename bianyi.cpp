@@ -20,6 +20,9 @@ void executeWithInputFiles(string inputfilePath, string &executeFileName)
 	
 	// second g++
 	system("g++ -o ${excuteFileName} ${inputfilePath}");
+
+	// if is java
+	// system("javac ${excuteFileName}");
 	return ;
 }
 
@@ -48,7 +51,12 @@ int main()
 	string executeFile;
 	string outputFile;
 	executeWithInputFiles(inputFile, executeFile);
+
+	// in this way, here should make some different in different files
+	// if is c
 	system("./${executeFile} < ${inputFile} > ${outputFile}");
+	// if is java
+	system("java ${excuteFileName} < ${inputfilePath} > ${outputFile}");
         string expectOutput = "expect.output"; 
 	if (seeDiff(expectOutput, outputFile)) {
 		cout<<"erorr!"<<endl;
