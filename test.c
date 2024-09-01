@@ -5,8 +5,11 @@ int main()
 {
 	int a;
 	char c;
-	scanf("%d", &a);
-	printf("%d", a);
-	return 0;
+	int times = 3;
+	while (times --) {
+	  scanf("%d", &a);
+	  printf("%d", a);
+	}
  
+	return 0;
 }
